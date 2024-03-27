@@ -1,9 +1,9 @@
 import { MiniBoxProps } from "../interfaces";
 
-export default function MiniBox({ content, h, w }: MiniBoxProps) {
+export default function MiniBox({ content }: MiniBoxProps) {
   return (
     <div
-      className={`flex justify-center items-center h-[${h}%] w-[${w}%] bg-[var(--delft-blue)] rounded-3xl`}
+      className={`flex justify-center items-center h-[${100}%] w-[${100}%] bg-[var(--delft-blue)] rounded-3xl`}
     >
       {content}
     </div>

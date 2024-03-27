@@ -3,7 +3,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { ImageProps, asideInterface, miniBoxInterface } from "../interfaces";
 import MiniBox from "./mini_box";
-import { inter } from "@/app/layout";
+// import { inter } from "@/app/layout";
 import { Image } from "@nextui-org/react";
 
 export default function Box({ boxNum }: miniBoxInterface) {
@@ -41,13 +41,21 @@ function FirstBox(): ReactNode {
       <Title title="Sobre Mim"></Title>
       <div className=" rounded-3xl h-[80%] w-[100%] flex flex-row justify-between">
         <div className="flex flex-col justify-between h-[100%] w-[58%]">
-          <div className="flex flex-row justify-between h-[50%] w-[100%]  rounded-3xl">
-            <MiniBox content={"a"} h={100} w={30}></MiniBox>
-            <MiniBox content={"b"} h={100} w={60}></MiniBox>
+          <div className="flex flex-row justify-between h-[50%] w-[100%]  rounded-3xl bg-red-600">
+            <div className="h-[100%] w-[40%]">
+              <MiniBox content={"a"}></MiniBox>
+            </div>
+            <div className="h-[100%] w-[55%]">
+              <MiniBox content={"a"}></MiniBox>
+            </div>
           </div>
-          <MiniBox content={"a"} h={45} w={100}></MiniBox>
+          <div className="h-[40%] w-[100%]">
+            <MiniBox content={"a"}></MiniBox>
+          </div>
         </div>
-        <MiniBox content={"a"} h={100} w={40}></MiniBox>
+        <div className="h-[100%] w-[40%]">
+          <MiniBox content={"a"}></MiniBox>
+        </div>
       </div>
     </>
   );
@@ -87,38 +95,43 @@ function SecondBox(): ReactNode {
   return (
     <>
       <Title title="Projetos"></Title>
-      <div className="flex flex-col justify-start items-start w-[100%] h-[10%] ">
-        <h1
-          className={`text-[var(--pumpkin)] text-center text-3xl m-4 text-nowrap`}
-        >
-          {image && image.title}
-        </h1>
-      </div>
-      <div className=" rounded-3xl h-[70%] w-[100%] flex flex-row justify-between">
+
+      <div className=" rounded-3xl h-[80%] w-[100%] flex flex-row justify-between ">
         <MiniBox
           content={
-            <div className="flex flex-col justify-between items-center h-[100%] w-[100%]">
-              <div className="flex flex-col justify-center items-center h-[85%] w-[80%]">
+            <div className="flex flex-col justify-between items-center h-[100%] w-[100%] p-4">
+              <div className="flex flex-col justify-center items-center h-[100%] w-[80%]">
                 {image && (
-                  <div className="flex justify-between items-center max-h-[80%] w-[85%] rounded-3xl">
-                    <Image
-                      alt={image.title}
-                      src={image.path}
-                      width={600}
-                      height={80}
-                    ></Image>
-                    <div className="bg-red-600 h-40 w-40">
-                      {image.description}
+                  <div className="flex flex-col justify-between items-center h-[90%] w-[100%]">
+                    <div className="flex flex-col justify-center items-center w-[100%] h-[20%] ">
+                      <h1
+                        className={`text-[var(--pumpkin)] text-center text-3xl m-4 text-nowrap`}
+                      >
+                        {image.title}
+                      </h1>
+                    </div>
+                    <div className="flex flex-row justify-between items-center h-[90%] w-[100%] rounded-3xl p-4 border-solid border-[0.2rem] border-[var(--maize)]">
+                      <div className="h-[100%] w-[50%]">
+                        <Image
+                          alt={image.title}
+                          src={image.path}
+                          width={2000}
+                          height={1000}
+                        ></Image>
+                      </div>
+                      <div className="h-[100%] w-[40%]">
+                        {image.description}
+                      </div>
                     </div>
                   </div>
                 )}
               </div>
-              <div className="flex flex-col justify-center items-center h-[15%] w-[80%] bg-red-600">
+              <div className="flex flex-col justify-center items-center h-[15%] w-[80%] ">
                 <ul className="flex flex-row justify-center items-center gap-2 ">
                   {images.map((item, index) => (
                     <li key={index}>
                       <div
-                        className="border-solid border-[0.2rem] border-[var(--maize)] rounded-xl hover:bg-[var(--maize)] h-20 w-20 hover:w-40"
+                        className="border-solid border-[0.2rem] border-[var(--maize)] rounded-xl hover:bg-[var(--maize)] h-20 w-20"
                         onMouseOver={() => {
                           setImage(images[index]);
                         }}
@@ -129,8 +142,6 @@ function SecondBox(): ReactNode {
               </div>
             </div>
           }
-          h={100}
-          w={100}
         ></MiniBox>
       </div>
     </>
@@ -152,8 +163,6 @@ function ThirdBox(): ReactNode {
             ></Image>
           </div>
         }
-        h={80}
-        w={100}
       ></MiniBox>
     </>
   );

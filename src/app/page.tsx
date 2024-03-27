@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex flex-col justify-start items-center w-[20%] mr-8">
         <Aside></Aside>
       </div>
-      <div className="flex flex-col justify-center items-end h-[100%] w-[100%] pt-20 ml-2 mr-10  min-h-screen  gap-28 overflow-hidden ">
+      <div className="flex flex-col justify-center items-end h-[100%] w-[100%] pt-20 ml-2 mr-10  min-h-screen  gap-28 overflow-hidden">
         <Box boxNum={1}></Box>
         <Box boxNum={2}></Box>
         <Box boxNum={3}></Box>

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { inter } from "../layout";
+// import { inter } from "../layout";
 
 export interface miniBoxInterface {
   boxNum: number;
